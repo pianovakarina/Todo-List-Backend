@@ -1,0 +1,14 @@
+type FAQ @model {
+  id: ID!
+  destination_id: ID!
+  category_id: ID!
+  product_id: ID!
+  questions: [Question]! @connection(keyName: "byFAQ", fields: ["id"])
+}
+
+type Question @model @key(name: "byFAQ", fields: ["FAQID"]) {
+  id: ID!
+  FAQID: ID!
+  question: String!
+  answer: String!
+}
