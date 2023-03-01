@@ -8,6 +8,7 @@ type FAQ @model {
 
 type Question @model @key(name: "byFAQ", fields: ["FAQID"]) {
   id: ID!
+  user: String
   FAQID: ID!
   question: String!
   answer: String!
